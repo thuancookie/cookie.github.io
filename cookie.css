@@ -1,4 +1,4 @@
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
@@ -202,16 +202,98 @@ ul li:hover .name-song1 {
   
 }
 .bg {
-  width: 840px;
-  height: 472.5px;
+  max-width: 840px;
+  height: auto;
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
   background-image: linear-gradient(120deg, black , blue , black );
   border-radius: 10px;
+  position: relative;
 }
-.bg img {
+.prev, .next  {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3000;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 30px;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+.prev {
+  left: -25px;
+}
+.prev:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: blue;
+}
+.next {
+  right: -25px;
+}
+.next:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  color: blue;
+}
+.bg-slide {
+  width: 100%;
+  height: 472.5px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+
+}
+.bg-main {
+  display: flex;
+  height: 100%;
+  position: relative;
+  transition: transform 0.3s linear;
+
+}
+.bg-item {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  flex: 1 0 100%;  /* flex-grow: 1;  dãn ra 
+                      flex-shrink: 0; ko thu lại 
+                      flex-basis: 100%;  luôn full  */
+}
+.bg-item img {
+  width: 100%;
+  height: 100%;
+}
+.lyric {
+  width: 840px;
+  height: 472.5px;
+  background-image: url("..\img\thumb\chó thumb.jpg");
+}
+.bg-lyric {
+  width: 100%;
+  height: 100%;
+}
+.modal-lyric {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: scroll;
+  font-size: 18px;
+  font-weight: 600;
+}
+.modal-lyric::-webkit-scrollbar {
+  width: 0px;
+
+}
+.bbVIQb {
+  width: 65%;
+  margin: 0 auto;
 }
 .range {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
@@ -241,6 +323,65 @@ ul li:hover .name-song1 {
   box-shadow: 0 0 10px 7px white;
   cursor: pointer;
 }
+
+.rangebeat {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  height: 10px; /* Specific width is required for Firefox. */
+  background: blue; /* Otherwise white in Chrome */
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  z-index: 1000;
+}
+.rangebeat::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.rangebeat::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: -5px;
+  box-shadow: 0 0 10px 7px white;
+  cursor: pointer;
+}
+
+.rangevocal {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  height: 10px; /* Specific width is required for Firefox. */
+  background: blue; /* Otherwise white in Chrome */
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  border-radius: 30px;
+  z-index: 1000;
+}
+.rangevocal::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.rangevocal::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background-color: blue;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: -5px;
+  box-shadow: 0 0 10px 7px white;
+  cursor: pointer;
+}
+
 .timer {
   display: flex;
   justify-content: space-between;
@@ -251,7 +392,25 @@ ul li:hover .name-song1 {
   position: relative;
 }
 
+.timerbeat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  position: relative;
+}
 
+.timervocal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  position: relative;
+}
 #controls {
   width: 100%;
   display: block;
@@ -277,9 +436,9 @@ ul li:hover .name-song1 {
 }
 .play {
   justify-content: center;
+  align-items: center;
   min-height: 50px;
   width: 50px;
-  align-items: center;
   margin: 0 10px;
 
 }
@@ -300,9 +459,9 @@ ul li:hover .name-song1 {
 
 .switch{
   justify-content: center;
+  align-items: center;
   min-height: 50px;
   width: 50px;
-  align-items: center;
   margin: 0 10px;
 }
 .switch:hover i{
@@ -588,28 +747,32 @@ p a:hover {
   .main-content{
     width: 100%;
     height: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 0px;
   }
-  .range {
+  .range , .rangebeat , .rangevocal {
     position: fixed;
     bottom: 5px;
     z-index: 2000;
     width: 90%;
     background-color: transparent;
   }
-  .range::-webkit-slider-runnable-track {
+  .range::-webkit-slider-runnable-track ,
+  .rangebeat::-webkit-slider-runnable-track ,
+  .rangevocal::-webkit-slider-runnable-track {
     height: 7px;
     background-color: blue;
   }
-  .range::-webkit-slider-thumb {
+  .range::-webkit-slider-thumb,
+  .rangebeat::-webkit-slider-thumb ,
+  .rangevocal::-webkit-slider-thumb {
     width: 15px;
     height: 15px;
     background-color: black;
     margin-top: -4px;
     box-shadow: 0 0 10px 5px blue;
   }
-  .timer {
+  .timer , .timerbeat , .timervocal {
     position: fixed;
     bottom: 30px;
     width: 90%;
@@ -618,7 +781,6 @@ p a:hover {
     z-index: 2000;
     color: black;
   }
-  
   .control {
     position: fixed;
     bottom: 0px;
@@ -702,17 +864,24 @@ p a:hover {
   }
   ul.list-song li .name-song {
     font-size: 13px;
-    
   }
-  .range::-webkit-slider-runnable-track {
+  .bg-slide {
+    width: 100%;
+    height: 425px;
+  }
+  .range::-webkit-slider-runnable-track , 
+  .rangebeat::-webkit-slider-runnable-track , 
+  .rangevocal::-webkit-slider-runnable-track {
     height: 5px;
   }
-  .range::-webkit-slider-thumb {
+  .range::-webkit-slider-thumb ,
+  .rangebeat::-webkit-slider-thumb ,
+  .rangevocal::-webkit-slider-thumb {
     width: 12px;
     height: 12px;
     margin-top: -3px;
   }
-  
+
   h3 {
     font-size: 30px;
   }
@@ -868,7 +1037,7 @@ p a:hover {
   }
 }
 
-@media screen and (orientation: landscape) and (max-height: 426px) {
+/* @media screen and (orientation: landscape) and (max-height: 426px) {
   #content  {
     width: 90%;
   }
@@ -909,4 +1078,4 @@ p a:hover {
     border-radius: 0;
     
   }
-}
+} */
