@@ -92,9 +92,9 @@ let click = 1;
  
 let timer;
 
-playBtn.addEventListener ("click", playPause);
+playBtn.addEventListener("click", playPause);
 
-beatBtn.addEventListener ("click", beatVocal);
+beatBtn.addEventListener("click", beatVocal);
 
 
 timer = setInterval(displayTimer, 500);
