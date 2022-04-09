@@ -510,7 +510,10 @@ ul li:hover .name-song {
   display: flex;
   justify-content: right;
   cursor: pointer;
-
+  transition: all 0.25s ease-in-out;
+}
+#full-screen:hover {
+  color: blue;
 }
 .infor {
   display: block;
