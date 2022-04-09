@@ -834,6 +834,9 @@ p a:hover {
   .fb-comments {
     width: 100%;
   }
+  .footer {
+    margin-bottom: 130px;
+  }
 }
 /* Mobile L  */
 @media screen and (max-width: 426px){
