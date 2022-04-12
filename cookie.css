@@ -595,7 +595,7 @@ p a:hover {
   height: auto;
   display: block;
 }
-.footer {
+.footer, #footer {
   display: block;
   width: 100%;
   height: 100px;
