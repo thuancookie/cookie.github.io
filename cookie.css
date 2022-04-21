@@ -278,6 +278,7 @@ ul li:hover .name-song {
 .loi {
   width: 65%;
   margin: 0 auto;
+  color: white;
 }
 .range {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
