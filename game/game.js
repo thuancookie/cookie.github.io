@@ -5,9 +5,7 @@ const contentFull = document.getElementById("content-game");
 
 const el = document.documentElement;
 
-const head = document.getElementById("head");
-
-const suggestFull = document.querySelector(".suggest-full");
+const head = document.getElementById("head-game");
 
 head.style.display = "block";
 
@@ -20,7 +18,6 @@ fullScreen.addEventListener("click", function(){
         el.requestFullscreen();
         fullScreen.innerHTML = `<i class="fas fa-compress-arrows-alt"></i>`;
         head.style.display = "none";
-        suggestFull.style.display = "none";
         contentFull.classList.add("content-full");
         full = false;
     }
@@ -28,7 +25,6 @@ fullScreen.addEventListener("click", function(){
         document.exitFullscreen();
         fullScreen.innerHTML = `<i class="fas fa-expand-arrows-alt"></i>`;
         head.style.display = "block";
-        suggestFull.style.display = "flex";
         contentFull.classList.remove("content-full");
         full = true;
     }

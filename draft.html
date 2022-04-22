@@ -70,37 +70,53 @@
         <h2 >DANH SÁCH BÀI HÁT</h2>
         <ul class="list-song">
           <!-- từng bài  -->
-          <li class="songItem" >
-            <img id="1" class="thumb-song"  src="https://i.ytimg.com/vi/8q0s_jA8Qfg/maxresdefault.jpg"/>
-            <span id="1" class="name-song"  >Hymn For The Weekend - Coldplay | Alan Walker Remix</span>
+          <li>
+            <a href="..\song\hymn-for-the-weekend.html">
+              <img class="thumb-song" src="https://i.ytimg.com/vi/8q0s_jA8Qfg/maxresdefault.jpg"/>
+              <span class="name-song" >Hymn For The Weekend - Coldplay | Alan Walker Remix</span>
+            </a>
           </li>
-          <li class="songItem" >
-            <img id="2" class="thumb-song" src="https://i.ytimg.com/vi/_akC0MOxdV0/maxresdefault.jpg"/>
-            <span id="2" class="name-song">TGSN - Siren (feat. Tlinh + RZ Mas)</span>
+          <li>
+            <a href="..\song\siren.html">
+              <img class="thumb-song" src="https://i.ytimg.com/vi/_akC0MOxdV0/maxresdefault.jpg"/>
+            <span class="name-song">TGSN - Siren (feat. Tlinh + RZ Mas)</span>
+            </a>
           </li>
-          <li class="songItem" >
-            <img id="3" class="thumb-song" src="https://i.ytimg.com/vi/o7cA0MtTuYw/maxresdefault.jpg"/>
-            <span id="3" class="name-song" >CHƯA TỪNG VÌ NHAU - KARIK x VP TIEN</span>
+          <li>
+            <a href="..\song\chua-tung-vi-nhau.html">
+                <img class="thumb-song" src="https://i.ytimg.com/vi/o7cA0MtTuYw/maxresdefault.jpg"/>
+                <span class="name-song" >CHƯA TỪNG VÌ NHAU - KARIK x VP TIEN</span>
+            </a>
           </li>
-          <li class="songItem" > 
-            <img id="4" class="thumb-song" src="https://i.ytimg.com/vi/shLUsd7kQCI/maxresdefault.jpg"/>
-            <span id="4" class="name-song" >Unstoppable - Sia </span>
+          <li>
+            <a href="..\song\unstoppable.html">
+                <img  class="thumb-song" src="https://i.ytimg.com/vi/shLUsd7kQCI/maxresdefault.jpg"/>
+                <span class="name-song" >Unstoppable - Sia </span>
+            </a>
           </li>
-          <li class="songItem" >
-            <img id="5" class="thumb-song" src="https://i.ytimg.com/vi/b_Y1PfGinsA/maxresdefault.jpg"/>
-            <span id="5" class="name-song" >Seachains - CHÓ - MV - CHUYỀN EP</span>
+          <li>
+            <a href="..\song\cho.html">
+                <img class="thumb-song" src="https://i.ytimg.com/vi/b_Y1PfGinsA/maxresdefault.jpg"/>
+                <span class="name-song" >Seachains - CHÓ - MV - CHUYỀN EP</span>
+            </a>
           </li>
-          <li class="songItem" >
-            <img id="6" class="thumb-song" src="https://i.ytimg.com/vi/amyPCmf9jrw/maxresdefault.jpg"/>
-            <span id="6" class="name-song" >Đau Vậy Đủ Rồi - Karik X V.P.Tiên</span>
+          <li>
+            <a href="..\song\dau-vay-du-roi.html">
+                <img class="thumb-song" src="https://i.ytimg.com/vi/amyPCmf9jrw/maxresdefault.jpg"/>
+                <span class="name-song" >Đau Vậy Đủ Rồi - Karik X V.P.Tiên</span>
+            </a>
           </li>
-          <li class="songItem" >
-            <img id="7" class="thumb-song" src="https://i.ytimg.com/vi/HCq1OcAEAm0/maxresdefault.jpg"/>
-            <span id="7" class="name-song" >Lil Nas X - Industry Baby ft. Jack Harlow</span>
+          <li>
+            <a href="..\song\industry-baby.html">
+                <img class="thumb-song" src="https://i.ytimg.com/vi/HCq1OcAEAm0/maxresdefault.jpg"/>
+                <span class="name-song" >Lil Nas X - Industry Baby ft. Jack Harlow</span>
+            </a>
           </li>
-          <li class="songItem" >
-            <img id="8" class="thumb-song" src="https://i.ytimg.com/vi/Uk16OLGUF4U/maxresdefault.jpg"/>
-            <span id="8" class="name-song" >Beat Brothers - Fight</span>
+          <li>
+            <a href="..\song\fight.html">
+                <img class="thumb-song" src="https://i.ytimg.com/vi/Uk16OLGUF4U/maxresdefault.jpg"/>
+                <span class="name-song" >Beat Brothers - Fight</span>
+            </a>
           </li>
 
 
@@ -121,18 +137,14 @@
           
           <div class="bg-slide">
             <div class="bg-main">
+
               <div class="bg-item">
-                <img id="thumbItem1"  class="thumb-song"  src=""/>
+                <video controls src="BMN 1 Nhạc nền video không bản quyền  Background Music Nocopyright  COOKIE_1080pFHR.mp4">
               </div>
 
               <div class="bg-item">
-                <img id="thumbItem2" class="thumb-song"  src=""/>
-
                 <div class="lyric">
-                  <div class="modal-lyric">
-                    <img id="thumbItem3" class="thumb-song"  src=""/>
-                    
-                  </div>
+                  <img src="..\img\thumb\ảnh bìa cookie.jpg">
                 </div>
               </div>
                 
@@ -144,22 +156,19 @@
           </div> 
         </div> 
         <!-- full  -->
-        <div class="bar" id="bar">
-          <input type="range" name="range" id="seek" value="0" max="100" >
-          <div class="bar2" id="bar2"></div>
-          <div class="dot"></div>
+        <input type="range" name="range" id="range" class="range" />
+        <div class="timer">
+          <div class="remaining">00:00</div>
+          <div class="duration">00:00</div>
         </div>
-        <div class="timer" id="timer">
-          <div id="currentStart">0:00</div>
-          <div id="currentEnd">0:00</div>
-        </div>
+        
         <!-- điều khiển  -->
         <div id="controls">
           <div class="control">
             <div class="play">
-              <i class="fas fa-play" id="masterPlay"></i>
+              <i class="fas fa-play"></i>
             </div>
-            <div class="switch" id="switch">
+            <div class="switch">
               <i class="fas fa-compact-disc"></i>
             </div>
           </div>
@@ -171,9 +180,6 @@
     <div class="information">
       
     </div>
-    <!-- <div class="loader">
-      
-    </div> -->
     <!-- CHÂN  -->
     <footer class="footer">
         <div class="copyright">Copyright © 2022 COOKIE </div>
