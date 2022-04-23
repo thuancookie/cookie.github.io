@@ -120,8 +120,54 @@ h2 {
   font-size: 30px;
   font-weight: 700;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-bottom: 30px;
   color: blue;
+}
+.search {
+  width: 90%;
+  height: 30px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+}
+.search input {
+  width: 0%;
+  height: 100%;
+  display: flex;
+  border: 0;
+  outline: 0;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  padding: 0 20px;
+  transition: all 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.search input.active1 {
+  width: 90%;
+}
+.search input::placeholder {
+  color: blue;
+  font-weight: 600;
+}
+.search button {
+  border: 0;
+  outline: 0;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: 5px solid white;
+  border-radius: 50%;
+  position: relative;
+  transform: translateX(-95%);
+  cursor: pointer;
+  color: blue;
+  transition: all 0.25s ease-in-out;
+  
+}
+.search button.active2 {
+  transform: translateX(-40%);
 }
 ul {
   list-style-type:none;
@@ -438,22 +484,60 @@ ul li:hover .name-song {
   color: blue;
   transition: all 0.3s ease-in-out;
 }
-.loader {
+.errorMusic {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.467);
+  background-color: rgba(0, 0, 0, 0.8);
   position: fixed;
   top: 0;
   z-index: 100000000000000000000000;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.25s ease-in-out;
 }
-.showLoader {
-  animation: vanish 5s forwards;
+.showError {
+  pointer-events: all;
+  opacity: 1;
 }
-@keyframes vanish {
-  to {
-    opacity: 0;
-    visibility: hidden;
-  }
+.errorPopup {
+  width: 300px;
+  height: 200px;
+  background-image: linear-gradient(120deg, white , blue , white );
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid white;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.errorPopup p {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 30px;
+  color: white;
+  font-weight: 700;
+}
+.errorPopup button {
+  width: 80px;
+  height: 40px;
+  display: block;
+  background-color: blue;
+  border: 2px solid white;
+  border-radius: 10px;
+  outline: 0;
+  color: white;
+  margin: 0px auto;
+  margin-top: 60px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+.errorPopup button:hover {
+  background-color: white;
+  border: 2px solid white;
+  color: blue;
 }
 #content-game {
   width: 100%;

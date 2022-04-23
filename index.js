@@ -1,66 +1,4 @@
-/* Jquery
 
-$(document).ready(function(){
-    $(".logo").click(function(){
-      $(".fullsong").hide();
-      return false;
-  });
-}); 
-
-$(document).ready(function(){
-        $("img").click(function(){
-          $("h1").fadeOut();
-  });
-});    
-*/
-
-// Javascript
-
-//alert('thong bao')
-
-/*let chao = "sadjsad"
-document.write(chao);*/
-
-// const beatt = [
-//   {
-//     id: 1,
-//     name: "hymn_for_the_weekend",
-//     path: "music/beat/beat - hymn_for_the_weekend_coldplay_alan_walker.mp3",
-//   },
-//   {
-//     id: 2,
-//     name: "siren",
-//     path: "music/beat/beat-TGSN  Siren feat Tlinh  RZ Mas  Official Music Video.mp3",
-//   },
-// ]
-
-// const videoo = ["video/hymn_for_the_weekend_coldplay_alan_walker_remix_lyrics_vietsub_-6813827076604946719.mp4", "video/TGSN  Siren feat Tlinh  RZ Mas  Official Music Video_1080p.mp4", ]
-
-// beat.setAttribute("src", `./music/beat/${beatt[indexSong].path}`);
-
-// video.setAttribute("src", `./video/${video[0]}`);
-
-
-// nameShow.addEventListener ("click", Show);
-
-// thumbShow.addEventListener ("click", Show);
-
-// function Show(){
-// 	if(show){
-// 		video.style.display = "block";
-// 		bg.style.display = "none";
-//     video1.style.display = "none";
-// 	}else{
-// 		video.style.display = "none";
-// 		bg.style.display = "block";
-		
-// 	}
-// }
-
-// const video = document.getElementById("video");
-
-
-window.addEventListener("load", function(){
   const slider = document.querySelector(".bg");
   const sliderMain = document.querySelector(".bg-main");
   const sliderItems = document.querySelectorAll(".bg-item");
@@ -69,39 +7,49 @@ window.addEventListener("load", function(){
   const sliderItemWidth = sliderItems[0].offsetWidth;
   const slidesLength = sliderItems.length;
   let postionX = 0;
-  let index = 0;
+  let indexSlide = 0;
 
   nextBtn.addEventListener("click", function(){
-    handleChangeSlide(1);
+    if(index == 0) {
+      bar.classList.remove('showBar');
+      timer.classList.remove('showTimer');
+      masterPlay.classList.add('fa-play');
+      masterPlay.classList.remove('fa-pause');
+      errorMusic.classList.add('showError');
+    }
+    else {
+      handleChangeSlide(1);
+
+    }
     
   });
   prevBtn.addEventListener("click", function(){
     handleChangeSlide(-1);
   });
+
   function handleChangeSlide(direction){
     if (direction == 1){
-      if (index >= slidesLength - 1) {
-        index = slidesLength - 1;
+      if (indexSlide >= slidesLength - 1) {
+        indexSlide = slidesLength - 1;
         return;
       }
       postionX = postionX - sliderItemWidth;
       sliderMain.style = `transform: translateX(${postionX}px)`;
-      index++;
+      indexSlide++;
 
     } else if (direction == -1){
-      if (index <= 0){
-        index = 0;
+      if (indexSlide <= 0){
+        indexSlide = 0;
         return;
       }
       postionX = postionX + sliderItemWidth;
       sliderMain.style = `transform: translateX(${postionX}px)`;
-      index--;
+      indexSlide--;
 
     }
   }
-});
 
-const music = new Audio('../song/music/full/1.mp3');
+const music = new Audio('');
 
 const songs = [
   {
@@ -144,6 +92,11 @@ const songs = [
     songName:"Beat Brothers - Fight",
     poster:"https://i.ytimg.com/vi/Uk16OLGUF4U/maxresdefault.jpg"
   },
+  {
+    id:'9',
+    songName:"BIGBANG - '봄여름가을겨울 (Still Life)'",
+    poster:"https://i.ytimg.com/vi/eN5mG_yMDiM/maxresdefault.jpg"
+  },
 ]
 
 let index = 0;
@@ -157,6 +110,7 @@ let masterPlay = document.getElementById("masterPlay");
 let switchMusic = document.getElementById('switch');
 
 let sM = 1;
+ 
 
 Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
   element.getElementsByTagName('img')[0].src = songs[i].poster;
@@ -220,7 +174,23 @@ Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
 
 let bar = document.getElementById('bar');
 let timer = document.getElementById('timer');
+let errorMusic = document.getElementById('errorMusic');
+let okBtn = document.getElementById('ok');
 
+okBtn.addEventListener("click", ()=>{
+  errorMusic.classList.remove('showError');
+
+})
+
+switchMusic.addEventListener("click", ()=>{
+  if(index == 0) {
+    bar.classList.remove('showBar');
+    timer.classList.remove('showTimer');
+    masterPlay.classList.add('fa-play');
+    masterPlay.classList.remove('fa-pause');
+    errorMusic.classList.add('showError');
+  }
+})
 masterPlay.addEventListener("click", ()=>{
   if (music.paused || music.currentTime <=0) {
     music.play();
@@ -232,6 +202,13 @@ masterPlay.addEventListener("click", ()=>{
     music.pause();
     masterPlay.classList.add('fa-play');
     masterPlay.classList.remove('fa-pause');
+  }
+  if(index == 0) {
+    bar.classList.remove('showBar');
+    timer.classList.remove('showTimer');
+    masterPlay.classList.add('fa-play');
+    masterPlay.classList.remove('fa-pause');
+    errorMusic.classList.add('showError');
   }
 })
 
@@ -277,10 +254,104 @@ music.addEventListener("ended", ()=>{
 
 let loader = document.querySelector(".loader");
 
-// window.addEventListener("load", ()=>{
-//   loader.classList.add("showLoader");
-// })
+let searchSong = document.getElementById('searchSong');
 
+let searchBtn = document.getElementById('searchBtn');
+
+let search = true;
+
+searchBtn.addEventListener("click", ()=>{
+  if (search == true) {
+    searchSong.classList.add('active1');
+    searchBtn.classList.add('active2');
+    search = false;
+  }
+  else {
+    searchSong.classList.remove('active1');
+    searchBtn.classList.remove('active2');
+    search = true;
+  }
+  
+})
+
+
+
+// document.addEventListener("keydown", e =>{
+//   e.preventDefault();
+//   if (e.key === "s") {
+//     if (music.paused || music.currentTime <=0) {
+//       music.play();
+//       masterPlay.classList.remove('fa-play');
+//       masterPlay.classList.add('fa-pause');
+//       bar.classList.add('showBar');
+//       timer.classList.add('showTimer');
+//     } else {
+//       music.pause();
+//       masterPlay.classList.add('fa-play');
+//       masterPlay.classList.remove('fa-pause');
+//     }
+//     if(index == 0) {
+//       bar.classList.remove('showBar');
+//       timer.classList.remove('showTimer');
+//       masterPlay.classList.add('fa-play');
+//       masterPlay.classList.remove('fa-pause');
+//       errorMusic.classList.add('showError');
+//     }
+//   }
+//   else if (e.key === "w") {
+//     if(index == 0) {
+//       bar.classList.remove('showBar');
+//       timer.classList.remove('showTimer');
+//       masterPlay.classList.add('fa-play');
+//       masterPlay.classList.remove('fa-pause');
+//       errorMusic.classList.add('showError');
+//     }
+//     else if(sM == 1){
+//       switchMusic.innerHTML = `<i class="fas fa-music"></i>`;
+//       music.src = `../song/music/beat/beat ${index}.mp3`;
+//       sM = 2;
+//       bar.classList.add('showBar');
+//       timer.classList.add('showTimer');
+//       music.play();
+//       masterPlay.classList.remove('fa-play');
+//       masterPlay.classList.add('fa-pause');
+//     } 
+//     else if (sM == 2) {
+//       switchMusic.innerHTML = `<i class="fas fa-laugh"></i>`;
+//       music.src = `../song/music/vocal/vocal ${index}.mp3`;
+//       sM = 3;
+//       bar.classList.add('showBar');
+//       music.play();
+//       masterPlay.classList.remove('fa-play');
+//       masterPlay.classList.add('fa-pause');
+//     }
+//     else if (sM == 3){
+//       switchMusic.innerHTML = `<i class="fas fa-compact-disc"></i>`;
+//       music.src = `../song/music/full/${index}.mp3`;
+//       sM = 1;
+//       bar.classList.add('showBar');
+//       music.play();
+//       masterPlay.classList.remove('fa-play');
+//       masterPlay.classList.add('fa-pause');
+//     }
+//   }
+//   else if (e.key === "ArrowRight" || e.key === "d") {
+//     if(index == 0) {
+//       bar.classList.remove('showBar');
+//       timer.classList.remove('showTimer');
+//       masterPlay.classList.add('fa-play');
+//       masterPlay.classList.remove('fa-pause');
+//       errorMusic.classList.add('showError');
+//     }
+//     else {
+//       handleChangeSlide(1);
+
+//     }
+//   }
+//   else if(e.key === "ArrowLeft" || e.key === "a") {
+//     handleChangeSlide(-1);
+//   }
+// })
 
 
 

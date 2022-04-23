@@ -68,6 +68,12 @@
       <!-- danh sách bài hát  -->
       <div class="list-music">
         <h2 >DANH SÁCH BÀI HÁT</h2>
+        <div class="search">
+          <input type="text" name="searchSong" id="searchSong" placeholder="Tìm bài hát">
+          <button type="button" id="searchBtn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
         <ul class="list-song">
           <!-- từng bài  -->
           <li class="songItem" >
@@ -102,7 +108,10 @@
             <img id="8" class="thumb-song" src="https://i.ytimg.com/vi/Uk16OLGUF4U/maxresdefault.jpg"/>
             <span id="8" class="name-song" >Beat Brothers - Fight</span>
           </li>
-
+          <li class="songItem" >
+            <img id="9" class="thumb-song" src="https://i.ytimg.com/vi/Uk16OLGUF4U/maxresdefault.jpg"/>
+            <span id="9" class="name-song" >BIGBANG - '봄여름가을겨울 (Still Life)'</span>
+          </li>
 
         </ul>
         <div class="game-icon">
@@ -135,7 +144,7 @@
                   </div>
                 </div>
               </div>
-                
+
             </div>
           </div>
 
@@ -171,9 +180,12 @@
     <div class="information">
       
     </div>
-    <!-- <div class="loader">
-      
-    </div> -->
+    <div class="errorMusic" id="errorMusic">
+      <div class="errorPopup">
+        <p>Vui lòng chọn bài hát</p>
+        <button type="button" id="ok">OK</button>
+      </div>
+    </div>
     <!-- CHÂN  -->
     <footer class="footer">
         <div class="copyright">Copyright © 2022 COOKIE </div>
