@@ -144,6 +144,9 @@ h2 {
 .search input.active1 {
   width: 90%;
 }
+.search input:valid {
+  width: 90%;
+}
 .search input::placeholder {
   color: blue;
   font-weight: 600;
@@ -166,8 +169,12 @@ h2 {
   transition: all 0.25s ease-in-out;
   
 }
-.search button.active2 {
-  transform: translateX(-40%);
+.search button:hover {
+  background-color: blue;
+  color: black;
+}
+.hide {
+  display: none;
 }
 ul {
   list-style-type:none;
@@ -556,7 +563,7 @@ ul li:hover .name-song {
 }
 .game-icon {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .game-icon img {
   width: 50px;

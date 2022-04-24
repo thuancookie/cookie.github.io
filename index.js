@@ -110,7 +110,6 @@ let masterPlay = document.getElementById("masterPlay");
 let switchMusic = document.getElementById('switch');
 
 let sM = 1;
- 
 
 Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
   element.getElementsByTagName('img')[0].src = songs[i].poster;
@@ -129,7 +128,7 @@ Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
     bar.classList.remove('showBar');
     timer.classList.remove('showTimer');
     switchMusic.innerHTML = `<i class="fas fa-compact-disc"></i>`;
-    let sM =1;
+    let sM = 1;
     switchMusic.addEventListener("click", ()=>{
       if(sM == 1){
         switchMusic.innerHTML = `<i class="fas fa-music"></i>`;
@@ -252,29 +251,36 @@ music.addEventListener("ended", ()=>{
   masterPlay.classList.remove('fa-pause');
 })
 
-let loader = document.querySelector(".loader");
 
-let searchSong = document.getElementById('searchSong');
+// let searchSong = document.getElementById('searchSong');
 
-let searchBtn = document.getElementById('searchBtn');
+// let searchBtn = document.getElementById('searchBtn');
 
-let search = true;
+// let search = true;
 
-searchBtn.addEventListener("click", ()=>{
-  if (search == true) {
-    searchSong.classList.add('active1');
-    searchBtn.classList.add('active2');
-    search = false;
-  }
-  else {
-    searchSong.classList.remove('active1');
-    searchBtn.classList.remove('active2');
-    search = true;
-  }
-  
-})
+// searchBtn.addEventListener("mouseover", ()=>{
+//   searchSong.classList.add('active1');
+// })
+// searchSong.addEventListener("mouseleave", ()=>{
+//   searchSong.classList.remove('active1');
+// })
+// searchSong.addEventListener("focus", ()=>{
+//   searchSong.classList.add('active1');
+// })
 
 
+// searchSong.addEventListener("input", (e)=>{
+//   const valueSearch = e.target.value;
+//   const songSearch = songs.filter(value => {
+//     return value.songName.toUpperCase().includes(valueSearch.toUpperCase());
+//   })
+// })
+// searchBtn.addEventListener("click", ()=>{
+//   Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
+//     element.getElementsByTagName('img')[0].src = songSearch[i].poster;
+//     element.getElementsByTagName('span')[0].innerHTML = songs[i].songName;
+//   })
+// })
 
 // document.addEventListener("keydown", e =>{
 //   e.preventDefault();
