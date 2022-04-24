@@ -266,6 +266,8 @@ seek.addEventListener("change", ()=>{
 music.addEventListener("ended", ()=>{
   masterPlay.classList.add('fa-play');
   masterPlay.classList.remove('fa-pause');
+  cir2.classList.remove('activeMusic1');
+  cir4.classList.remove('activeMusic2');
 })
 
 
