@@ -49,7 +49,7 @@
     }
   }
 
-const music = new Audio('');
+const music = new Audio('../song/music/tieng_vit_quac_de_ghep_vao_video_v_duck_sound_effect_quack_7729736649912712106.mp3');
 
 const songs = [
   {
@@ -111,6 +111,8 @@ let switchMusic = document.getElementById('switch');
 
 let sM = 1;
 
+
+
 Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
   element.getElementsByTagName('img')[0].src = songs[i].poster;
   element.getElementsByTagName('span')[0].innerHTML = songs[i].songName;
@@ -139,6 +141,9 @@ Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
         music.play();
         masterPlay.classList.remove('fa-play');
         masterPlay.classList.add('fa-pause');
+        cir2.classList.add('activeMusic1');
+        cir4.classList.add('activeMusic2');
+        
       } 
       else if (sM == 2) {
         switchMusic.innerHTML = `<i class="fas fa-laugh"></i>`;
@@ -190,6 +195,8 @@ switchMusic.addEventListener("click", ()=>{
     errorMusic.classList.add('showError');
   }
 })
+let cir2 = document.getElementsByClassName('cir2')[0];
+let cir4 = document.getElementsByClassName('cir4')[0];
 masterPlay.addEventListener("click", ()=>{
   if (music.paused || music.currentTime <=0) {
     music.play();
@@ -197,10 +204,17 @@ masterPlay.addEventListener("click", ()=>{
     masterPlay.classList.add('fa-pause');
     bar.classList.add('showBar');
     timer.classList.add('showTimer');
+    cir2.classList.add('activeMusic1');
+    cir4.classList.add('activeMusic2');
+
+    
   } else {
     music.pause();
     masterPlay.classList.add('fa-play');
     masterPlay.classList.remove('fa-pause');
+    cir2.classList.remove('activeMusic1');
+    cir4.classList.remove('activeMusic2');
+
   }
   if(index == 0) {
     bar.classList.remove('showBar');
@@ -208,6 +222,9 @@ masterPlay.addEventListener("click", ()=>{
     masterPlay.classList.add('fa-play');
     masterPlay.classList.remove('fa-pause');
     errorMusic.classList.add('showError');
+    cir2.classList.remove('activeMusic1');
+    cir4.classList.remove('activeMusic2');
+
   }
 })
 
@@ -250,6 +267,7 @@ music.addEventListener("ended", ()=>{
   masterPlay.classList.add('fa-play');
   masterPlay.classList.remove('fa-pause');
 })
+
 
 
 // let searchSong = document.getElementById('searchSong');
