@@ -109,9 +109,23 @@ let masterPlay = document.getElementById("masterPlay");
 
 let switchMusic = document.getElementById('switch');
 
+let replayMusic = document.getElementById('replay');
+
 let sM = 1;
 
+let isReplay = false;
 
+replayMusic.addEventListener("click", ()=>{
+  if(isReplay){
+    isReplay = false;
+    replayMusic.classList.remove('replayActive');
+  }
+  else{
+    isReplay = true;
+    replayMusic.classList.add('replayActive');
+
+  }
+})
 
 Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
   element.getElementsByTagName('img')[0].src = songs[i].poster;
@@ -166,11 +180,20 @@ Array.from(document.getElementsByClassName('songItem')).forEach((element, i)=>{
       
     
     })
+    
     music.addEventListener("ended", ()=>{
-      masterPlay.classList.add('fa-play');
-      masterPlay.classList.remove('fa-pause');
+      if(isReplay){
+        music.play();
+        masterPlay.classList.remove('fa-play');
+        masterPlay.classList.add('fa-pause');
+      }
+      else{
+        masterPlay.classList.add('fa-play');
+        masterPlay.classList.remove('fa-pause');
+      }
+      
     })
-
+    
     
   })
 

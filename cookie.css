@@ -101,7 +101,7 @@ body::-webkit-scrollbar-track {
 }
 .list-music {
   background-color: white;
-  margin: 20px 25px 20px auto;
+  margin: 10px 25px 20px auto;
   padding: 10px;
   display: block;
   width: 450px;
@@ -232,7 +232,7 @@ ul li:hover .name-song {
   width: 840px;
   height: 620px;
   display: block;
-  margin: 20px auto 20px 25px;
+  margin: 10px auto 20px 25px;
   
 }
 .bg {
@@ -358,8 +358,9 @@ ul li:hover .name-song {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: aliceblue;
+  background-color: white;
   position: absolute;
+
 }
 .cir2 {
   width: 30px;
@@ -369,6 +370,7 @@ ul li:hover .name-song {
   border-top: 4px solid white;
   position: absolute;
   animation: unset;
+
 }
 .cir2.activeMusic1 {
   animation: spin 2.5s infinite linear;
@@ -384,6 +386,7 @@ ul li:hover .name-song {
   border-radius: 50%;
   background-color: black;
   position: absolute;
+
 }
 .cir4 {
   width: 45px;
@@ -391,6 +394,7 @@ ul li:hover .name-song {
   border-radius: 50%;
   border: 2px solid white;
   position: absolute;
+  
 }
 .cir4.activeMusic2 {
   animation: scaleMusic 1s infinite linear;
@@ -505,7 +509,7 @@ ul li:hover .name-song {
   display: flex;
   background-color: white;
   margin: 0 auto;
-  width: 200px;
+  width: 270px;
   height: 95px;
   position: relative;
   justify-content: center;
@@ -518,7 +522,7 @@ ul li:hover .name-song {
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
   
 }
-.play {
+.play, .switch, .replay {
   justify-content: center;
   align-items: center;
   min-height: 50px;
@@ -526,32 +530,17 @@ ul li:hover .name-song {
   margin: 0 10px;
 
 }
-
-.play i{
+.play i, .switch i, .replay i{
   font-size: 50px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
   
 }
-.switch i{
-  font-size: 50px;
-}
-.play:hover i{
-  cursor: pointer;
+.play:hover i, .switch:hover i, .replay:hover i{
   color: blue;
-  transition: all 0.3s ease-in-out;
-
 }
-
-.switch{
-  justify-content: center;
-  align-items: center;
-  min-height: 50px;
-  width: 50px;
-  margin: 0 10px;
-}
-.switch:hover i{
-  cursor: pointer;
+.replay.replayActive {
   color: blue;
-  transition: all 0.3s ease-in-out;
 }
 .errorMusic {
   width: 100vw;
