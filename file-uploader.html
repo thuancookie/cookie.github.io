@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+input[type=file]::file-selector-button {
+  border: 1.5px solid #00cec9;
+  padding: .3em .5em;
+  border-radius: 5px;
+  background-color: #81ecec;
+  font-size: .9em;
+  font-weight: bold;
+  color: #167ba3;
+  transition: 1s;
+}
+
+input[type=file]::file-selector-button:hover {
+  background-color: #8d87e2;
+  border: 1.5px solid #685adf;
+  color: azure;
+}
+input[type=text]{
+  border: 2px solid #167ba3;
+  width: 115px;
+  border-radius: 5px;
+  outline: none;
+  font-size: .8em;
+  color: #2fc4c4;
+  font-weight: bold;
+  padding: .2em .4em;
+   
+}
+input[type=text]:hover{
+  border: 2px solid #2fc4c4 ;
+  color:#167ba3;
+}
+
+input[type=submit]{
+  border: none;
+  color: white;
+  font-weight:bold;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  padding: .5em 1.4em .4em ;
+  border-radius: 5px;
+  background-color: #6b4ae4;
+  transition: 1s;
+}
+
+input[type=submit]:hover{
+  background-color: #1a1aeb;
+}
+
+    </style>
+  <script>
+  function LoadFile(event)
+  {
+    var file = event.target.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      console.log(e.target.result);
+      var fileData = e.target.result.substr(e.target.result.indexOf(",")+1);
+      var mimeTypeStart = e.target.result.indexOf("data:") + 5;
+      var mimeTypeEnd = e.target.result.indexOf(";");
+      var mimeType = e.target.result.substr(mimeTypeStart, mimeTypeEnd - mimeTypeStart);
+      var fileName = file.name;
+      document.getElementById("fileData").value = fileData;
+      document.getElementById("mimeType").value = mimeType;
+      document.getElementById("fileName").value = fileName;
+    };    
+    reader.readAsDataURL(file);
+  }
+  </script>
+  </head>
+  <body>
+   <center><br><br>
+    <div style="box-shadow: rgba(34, 8, 131, 0.32) 0px 2px 4px 0px, rgba(34, 8, 128, 0.32) 0px 2px 16px 0px;width: 280px;padding: 15px 20px 20px 20px;border-radius: 20px;"> 
+    <h2 style="font-family: 'Inter', sans-serif;color: blue;"><i class="fa fa-upload" style="font-size:30px;margin-left: -70px;color:blue;"></i> File Uploader :-</h2>
+    <?var url = getUrl();?>
+    <form method="post" action="<?= url ?>" >
+      
+      <b style="font-weight: bold;color: #167ba3;">Name : </b><input type="text" name="username" autocomplete="off" /><br><br>
+      <input type="file" name="file" onchange="LoadFile(event)" style="margin-left: 50px;color: #167ba3;font-weight: bold;font-size: .82em;"/><br><br>
+      <input type="hidden" id="fileData" name="fileData" />
+      <input type="hidden" id="mimeType" name="mimeType" />
+      <input type="hidden" id="fileName" name="fileName" />
+        <input type="submit" value="Upload" />
+        <br>
+      </center>        
+    </form>
+</div>
+</center>
+</body>
+</html>
