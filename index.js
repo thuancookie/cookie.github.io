@@ -46,7 +46,6 @@ function handleChangeSlide(direction) {
 const music = new Audio(
   "../song/music/tieng_vit_quac_de_ghep_vao_video_v_duck_sound_effect_quack_7729736649912712106.mp3"
 );
-
 const songs = [
   {
     id: "1",
@@ -94,7 +93,6 @@ const songs = [
     poster: "https://i.ytimg.com/vi/eN5mG_yMDiM/maxresdefault.jpg",
   },
 ];
-
 let index = 0;
 
 let thumbItem1 = document.getElementById("thumbItem1");
