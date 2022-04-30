@@ -92,6 +92,11 @@ const songs = [
     songName: "BIGBANG - '봄여름가을겨울 (Still Life)'",
     poster: "https://i.ytimg.com/vi/eN5mG_yMDiM/maxresdefault.jpg",
   },
+  {
+    id: "10",
+    songName: "SƠN TÙNG M-TP - THERE'S NO ONE AT ALL",
+    poster: "https://i.ytimg.com/vi/te9JalT1k5s/maxresdefault.jpg",
+  },
 ];
 let index = 0;
 
