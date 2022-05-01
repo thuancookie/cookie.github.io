@@ -232,8 +232,8 @@ ul li:hover .name-song {
   margin: 10px auto 20px 25px;
 }
 .bg {
-  max-width: 840px;
-  height: auto;
+  width: 840px;
+  height: 472.5px;
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
   background-image: linear-gradient(120deg, black, blue, black);
   border-radius: 10px;
@@ -273,7 +273,7 @@ ul li:hover .name-song {
 }
 .bg-slide {
   width: 100%;
-  height: 472.5px;
+  height: 100%;
   overflow: hidden;
   position: relative;
   border-radius: 10px;
@@ -586,6 +586,21 @@ ul li:hover .name-song {
 .control:hover {
   box-shadow: 0px 0px 10px 2px rgb(255, 255, 255);
 }
+#songPlay {
+  position: absolute;
+  top: 0;
+  width: 95%;
+  height: 18%;
+  overflow: hidden;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  background-color: blue;
+  border-radius: 0 0 10px 10px;
+  padding: 0 5px;
+}
 .play,
 .switch,
 .replay {
@@ -601,11 +616,6 @@ ul li:hover .name-song {
   font-size: 50px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-}
-.play:hover i,
-.switch:hover i,
-.replay:hover i {
-  color: blue;
 }
 .replay.replayActive {
   color: blue;

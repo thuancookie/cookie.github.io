@@ -114,6 +114,8 @@ let sM = 1;
 
 let isReplay = false;
 
+let songPlay = document.getElementById("songPlay");
+
 replayMusic.addEventListener("click", () => {
   if (isReplay) {
     isReplay = false;
@@ -128,8 +130,10 @@ Array.from(document.getElementsByClassName("songItem")).forEach(
   (element, i) => {
     element.getElementsByTagName("img")[0].src = songs[i].poster;
     element.getElementsByTagName("span")[0].innerHTML = songs[i].songName;
+
     element.addEventListener("click", (e) => {
       index = e.target.id;
+      songPlay.innerText = songs[i].songName;
       thumbItem1.src = `../img/thumb/${index}.jpg`;
       thumbItem1.classList.add("showImg");
       thumbItem2.src = `../img/thumb/${index}.jpg`;
@@ -137,6 +141,7 @@ Array.from(document.getElementsByClassName("songItem")).forEach(
       thumbItem3.src = `../img/author/${index}.jpg`;
       thumbItem3.classList.add("showImg");
       music.src = `../song/music/full/${index}.mp3`;
+      console.log(songPlay);
       masterPlay.classList.add("fa-play");
       masterPlay.classList.remove("fa-pause");
       bar.classList.remove("showBar");
@@ -210,6 +215,7 @@ switchMusic.addEventListener("click", () => {
 });
 let cir2 = document.getElementsByClassName("cir2")[0];
 let cir4 = document.getElementsByClassName("cir4")[0];
+
 masterPlay.addEventListener("click", () => {
   if (music.paused || music.currentTime <= 0) {
     music.play();
@@ -290,9 +296,8 @@ let volShow = true;
 volIcon.addEventListener("click", () => {
   if (volShow) {
     volChange.classList.add("volShow");
-    volIcon.classList.remove("fa-volume-off");
-    volIcon.classList.add("fa-volume-down");
-
+    volIcon.classList.add("fa-volume-off");
+    // volIcon.classList.add("fa-volume-up");
     volShow = false;
   } else {
     volChange.classList.remove("volShow");
@@ -305,22 +310,28 @@ vol.addEventListener("change", () => {
     volIcon.classList.remove("fa-volume-down");
     volIcon.classList.add("fa-volume-mute");
     volIcon.classList.remove("fa-volume-up");
+    volIcon.classList.remove("fa-volume-off");
   }
   if (vol.value > 0) {
     volIcon.classList.add("fa-volume-down");
     volIcon.classList.remove("fa-volume-mute");
     volIcon.classList.remove("fa-volume-up");
+    volIcon.classList.remove("fa-volume-off");
   }
   if (vol.value > 50) {
     volIcon.classList.remove("fa-volume-down");
     volIcon.classList.remove("fa-volume-mute");
     volIcon.classList.add("fa-volume-up");
+    volIcon.classList.remove("fa-volume-off");
   }
   let volA = vol.value;
   volBar.style.width = `${volA}%`;
   volDot.style.left = `${volA}%`;
   music.volume = volA / 100;
 });
+volBar.style.width = `100%`;
+volDot.style.left = `100%`;
+music.volume = 100;
 
 // let searchSong = document.getElementById('searchSong');
 
