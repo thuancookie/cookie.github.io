@@ -614,8 +614,12 @@ ul li:hover .name-song {
 .switch i,
 .replay i {
   font-size: 50px;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.25s ease-in-out;
   cursor: pointer;
+}
+.play i:hover,
+.switch i:hover {
+  color: blue;
 }
 .replay.replayActive {
   color: blue;
@@ -953,6 +957,10 @@ p a:hover {
     z-index: 4000;
     width: 100%;
     height: 130px;
+  }
+  .play i:hover,
+  .switch i:hover {
+    color: black;
   }
   .suggest-reload,
   .suggest-full {
