@@ -95,7 +95,8 @@ const songs = [
   {
     id: "10",
     songName: "SƠN TÙNG M-TP - THERE'S NO ONE AT ALL",
-    poster: "https://i.ytimg.com/vi/te9JalT1k5s/maxresdefault.jpg",
+    poster:
+      "https://lu3app.com/wp-content/uploads/2022/05/Theres-No-One-at-All-.jpg",
   },
 ];
 let index = 0;
