@@ -332,7 +332,38 @@ vol.addEventListener("change", () => {
 });
 volBar.style.width = `100%`;
 volDot.style.left = `100%`;
-music.volume = 100;
+// music.volume = 100;
+
+let musicSwitch = document.getElementById("music-switch");
+let gameSwitch = document.getElementById("music-game");
+let listSong = document.getElementById("listSong");
+let listGame = document.getElementById("listGame");
+let tabSwitch = 2;
+
+musicSwitch.addEventListener("click", () => {
+  if (tabSwitch == 1) {
+    musicSwitch.classList.add("tabSelect");
+    musicSwitch.classList.remove("tabNotSelect");
+    gameSwitch.classList.add("tabNotSelect");
+    gameSwitch.classList.remove("tabSelect");
+    listGame.classList.add("hide");
+    listSong.classList.remove("hide");
+    tabSwitch = 2;
+  }
+});
+gameSwitch.addEventListener("click", () => {
+  if (tabSwitch == 2) {
+    gameSwitch.classList.add("tabSelect");
+    gameSwitch.classList.remove("tabNotSelect");
+    musicSwitch.classList.add("tabNotSelect");
+    musicSwitch.classList.remove("tabSelect");
+    listSong.classList.add("hide");
+    listGame.classList.remove("hide");
+    tabSwitch = 1;
+  }
+});
+listGame.classList.add("hide");
+listSong.classList.remove("hide");
 
 // let searchSong = document.getElementById('searchSong');
 

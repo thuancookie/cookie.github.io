@@ -61,14 +61,12 @@
     <div id="content">
       <!-- danh sách bài hát  -->
       <div class="list-music">
-        <h2>DANH SÁCH BÀI HÁT</h2>
-        <div class="search">
-          <!-- <input type="text" name="searchSong" id="searchSong" placeholder="Tìm bài hát" required>
-          <button type="button" id="searchBtn">
-            <i class="fas fa-search"></i>
-          </button> -->
+        <h2>DANH SÁCH</h2>
+        <div class="tab">
+            <button id="music-switch" class="tabSelect" >Music</button>
+            <button id="music-game" class="tabNotSelect" >Game</button>
         </div>
-        <ul class="list-song">
+        <ul id="listSong" class="list-song">
           <!-- từng bài  -->
 
           <li class="songItem">
@@ -168,6 +166,46 @@
             >
           </li>
         </ul>
+        <ul id="listGame" class="list-game">
+          <!-- từng game  -->
+          <li class="gameItem">
+            <img
+              id="1"
+              class="thumb-game"
+              src="..\img\ICON GAME.png"
+            />
+            <a title="Flappy Jett" href="..\game\flappy-jett.html">
+              <span id="1" class="name-game"
+              >FLAPPY JETT <br> [ mobile hoặc desktop ]</span
+            >
+            </a>
+          </li>
+          <li class="gameItem">
+            <img
+              id="2"
+              class="thumb-game"
+              src="..\img\ICON GAME.png"
+            />
+            <a title="Flappy Jett" href="..\game\flappyjett.html">
+              <span id="1" class="name-game"
+              >FLAPPY JETT <br> [ desktop ]</span
+            >
+            </a>
+          </li>
+          <li class="gameItem">
+            <img
+              id="3"
+              class="thumb-game"
+              src="..\img\KMN logo.png"
+            />
+            <a title="Flappy Jett" href="..\game\flappy-jett.html">
+              <span id="1" class="name-game"
+              >KILLJOY MOVE NANOSWARM <br> </span
+            >
+            </a>
+          </li>
+          
+        </ul>
         <div class="game-icon">
           <a title="Flappy Jett" href="..\game\flappy-jett.html">
             <img src="..\img\ICON GAME.png" />
@@ -256,7 +294,13 @@
         </div>
       </div>
     </div>
-    <div class="information"></div>
+
+    <div class="information">
+      
+    </div>
+    
+  </div>
+    </div>
     <div class="errorMusic" id="errorMusic">
       <div class="errorPopup">
         <p>Vui lòng chọn bài hát</p>
