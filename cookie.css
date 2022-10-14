@@ -741,6 +741,7 @@ ul li:hover .name-game {
   align-items: center;
   cursor: pointer;
   transition: all 0.25s ease-in-out;
+  margin: auto 0 auto auto;
 }
 #full-screen:hover {
   color: blue;
